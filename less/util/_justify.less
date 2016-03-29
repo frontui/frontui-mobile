@@ -1,0 +1,31 @@
+/*
+* module: justify 两端对齐
+* created: tommyshao
+* updated: 2015-11-19
+*/
+
+.justify {
+  text-align: justify;
+  font-size: 0;
+  &:after {
+    content: '';
+    display: inline-block;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+  }
+  li {
+    display: inline-block;
+    text-align: center;
+  }
+  p{
+    font-size: @fontSize-base;
+  }
+}
+
+.justify-flex {
+  width: 100%;
+  display: -webkit-box;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+}

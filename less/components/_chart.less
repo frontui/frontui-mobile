@@ -1,0 +1,89 @@
+﻿.simChartOne-wrap {
+    background-color: #83bfdb;
+    padding: 60px 36px 14px 36px;
+
+    > h5 {
+        color: #fff;
+        padding-bottom: 20px;
+    }
+}
+
+.simChartOne-label {
+    font-size: 0;
+    line-height: 0;
+    text-align: center;
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+
+    > h5 {
+        padding-left: 12px;
+        display: table-cell;
+        font-size: @fontSize-small;
+        line-height: 1;
+        color: #fff;
+        text-align: left;
+
+        &.left {
+            border-left: 4px solid #ffb324;
+        }
+
+        &.right {
+            border-left: 4px solid #fff;
+        }
+    }
+
+    > h2 {
+        padding-left: 12px;
+        padding-top: 12px;
+        display: table-cell;
+        font-size: @fontSize-larger;
+        line-height: @lineHeight-base;
+        color: #fff;
+    }
+}
+
+.simChartOne-case {
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    position: relative;
+    height: 210px;
+    margin-bottom: 30px;
+
+    &::after,
+    &::before {
+        height: 1px;
+        display: block;
+        background-color: #fff;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        content:'';
+    }
+
+    &::after {
+        top: 33.33%;
+    }
+
+    &::before {
+        top: 66.66%;
+    }
+}
+
+.simChartOne-art {
+    width: 114px;
+    position: absolute;
+    bottom: 0;
+    margin-left: -57px;
+    z-index: 2;
+
+    &:first-child {
+        background-color: #ffb324;
+        left: 25%
+    }
+
+    &:nth-child(2) {
+        background-color: #fff;
+        left: 75%
+    }
+}

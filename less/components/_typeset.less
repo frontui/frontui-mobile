@@ -1,0 +1,236 @@
+﻿// 倾斜
+em {
+  font-style: normal;
+}
+
+.itatic {
+  font-style: italic;
+}
+
+//排版工具类，尽量能在元素样式里面申明就不要用到这种附加类，否则会增加兼容性样式编写的难度，此类工具多用在对版面布局没影响的元素中
+.text-align-right {
+    text-align: right !important;
+}
+
+.text-align-left {
+    text-align: left !important;
+}
+
+.text-align-center {
+    text-align: center !important;
+}
+
+.text-align-justify {
+    text-align: justify !important;
+}
+
+.float-left {
+    float: left !important;
+}
+
+.float-right {
+    float: right !important;
+}
+
+.text-hide {
+    .text-hide();
+}
+
+.word-wrap {
+    .word-wrap();
+}
+
+.inline-block {
+    .inline-block();
+}
+
+.heading-FontColor {
+  color: @fontColor-heading !important;
+}
+
+.viceText-FontColor{
+    color: @fontColor-viceText !important;
+}
+
+.warning-FontColor{
+    color: @domColor2 !important;
+}
+
+.default-FontColor{
+    color: @domColor3 !important;
+}
+
+.error-FontColor{
+  color: @domColor3 !important;
+}
+
+.success-FontColor{
+    color: @domColor4 !important;
+}
+
+.f-20{
+    font-size: 20px !important;
+}
+
+.link-standard{
+    color: #009ef2;
+}
+
+//栅格布局
+.generate-col(@n, @i: 1) when (@i =< @n) {
+  .col-@{i} {
+    width: (@i * 100% / @n);
+  }
+  .generate-col(@n, (@i + 1));
+}
+.generate-col(12);
+
+//
+// 递归生成 margin 族类
+//
+.init-margin(@min: 10, @max: 50, @space: 10, @pre: fn) {
+  .build-margin(@count) when (@count >= @min) {
+    .build-margin((@count - @space));
+
+    .@{pre}-mt-@{count} {
+      margin-top: @count * 1px;
+    }
+    .@{pre}-mb-@{count} {
+      margin-bottom: @count * 1px;
+    }
+    .@{pre}-mtb-@{count} {
+      margin-top: @count * 1px;
+      margin-bottom: @count * 1px;
+    }
+
+    .@{pre}-ml-@{count} {
+      margin-left: @count * 1px;
+    }
+    .@{pre}-mr-@{count} {
+      margin-right: @count * 1px;
+    }
+    .@{pre}-mlr-@{count} {
+      margin-left: @count * 1px;
+      margin-right: @count * 1px;
+    }
+
+    .@{pre}-ma-@{count} {
+      margin: @count * 1px;
+    }
+  }
+
+  .build-margin(@max);
+}
+
+.init-margin;
+
+//
+// 递归生成 padding 族类
+//
+.init-padding(@min: 10, @max: 50, @space: 10, @pre: fn) {
+  .build-padding(@count) when (@count >= @min) {
+    .build-padding((@count - @space));
+
+    .@{pre}-pt-@{count} {
+      padding-top: @count * 1px;
+    }
+    .@{pre}-pb-@{count} {
+      padding-bottom: @count * 1px;
+    }
+    .@{pre}-ptb-@{count} {
+      padding-top: @count * 1px;
+      padding-bottom: @count * 1px;
+    }
+
+    .@{pre}-pl-@{count} {
+      padding-left: @count * 1px;
+    }
+    .@{pre}-pr-@{count} {
+      padding-right: @count * 1px;
+    }
+    .@{pre}-plr-@{count} {
+      padding-left: @count * 1px;
+      padding-right: @count * 1px;
+    }
+
+    .@{pre}-pa-@{count} {
+      padding: @count * 1px;
+    }
+  }
+
+  .build-padding(@max);
+}
+
+.init-padding;
+
+// 两侧无边距
+.mglr0{
+  margin-left: 0!important;
+  margin-right: 0!important;
+}
+.pdlr0 {
+  padding-left: 0!important;
+  padding-right: 0!important;
+}
+.pdb0{
+  padding-bottom: 0!important;
+}
+.pdt0{
+  padding-top:0!important;
+}
+.mgb0{
+  margin-bottom: 0!important;
+}
+.mgt0{
+  margin-top:0!important;
+}
+
+//
+// 递归生成 fontSize 族类
+//
+.init-fontSize(@min: 20, @max: 50, @space: 2, @pre: fs) {
+  .build-fontSize(@count) when (@count >= @min) {
+    .build-fontSize((@count - @space));
+
+    .@{pre}-@{count} {
+      font-size: @count * 1px!important;
+    }
+    .lh-@{count} {
+      line-height: @count * 1px!important;
+    }
+  }
+
+  .build-fontSize(@max);
+}
+
+.init-fontSize;
+.fs-80{
+  font-size: 80px!important;
+}
+
+//清除浮动
+.clearfix {
+    *zoom:1;
+}
+
+.clearfix:before,
+.clearfix:after {
+    display:table;
+    line-height:0;
+    content:"";
+}
+
+.clearfix:after {
+    clear:both;
+}
+
+//服务台
+.service-title{
+  padding: 20px;
+  font-size: @fontSize-large;
+  background: #fff;
+}
+.service-info{
+  padding: 20px;
+
+}

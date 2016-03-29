@@ -1,0 +1,199 @@
+﻿//
+// -------- 全局样式参数 --------
+//
+
+
+//全局参数命名规范：“属性名称 - 作用域”，如：@fontColor-default
+
+
+//图片所在目录
+@images-url:   "../images/";
+
+
+//字体图标所在目录
+@iconfont-url: "../iconfont/";
+
+
+//页面色调
+@domColor1: #18a4e2;
+@domColor2: #ec8e28;
+@domColor3: #dc2f53;
+@domColor4: #47c485;
+@domColor5: #666666;
+@domColor6: #ffffff;
+@domColor7: #efefef;
+
+
+//基础字符行高
+@lineHeight-base: 1.428571429;
+
+
+//基础字体尺寸
+@fontSize-base: 24px;
+    // 大字体尺寸
+    @fontSize-largest: @fontSize-base * 2;                  // ~48px
+    @fontSize-larger:  @fontSize-base * 1.5;                // ~36px
+    @fontSize-large: ceil(@fontSize-base * 1.25);           // ~30px
+    // 小字体尺寸
+    @fontSize-small: ceil(@fontSize-base * 1.16);           // ~28px
+    @fontSize-smaller: @fontSize-base;                      // ~24px
+    @fontSize-smallest: ceil(@fontSize-base * 0.83);        // ~20px
+
+// 移动端触屏，基本按钮或链接大小
+@basSize-pointer: 44px;
+
+
+//基础文本色调
+@fontColor-base: @domColor5;
+    // 标题色调
+    @fontColor-heading: darken(@fontColor-base,20%);        // #333
+    // 默认文本色调
+    @fontColor-default: @fontColor-base;
+    // 副文本色调
+    @fontColor-viceText: lighten(@fontColor-base,20%);      // #999
+    // 链接文本色调
+    @fontColor-link: @domColor1;
+    // 主颜色字体
+    @fontColor-primary: @domColor1;
+
+
+//基础边框色调
+@borderColor-base: darken(@domColor6,14%);                  // #dbdbdb
+    // 默认边框色调
+    @borderColor-default: @borderColor-base; 
+
+
+//基础背景色
+@bgColor-base: darken(@domColor6,7%);                       // #ededed
+    // 默认背景色
+    @bgColor-default: @bgColor-base;
+    // 主要背景色
+    @bgColor-primary: @domColor6;
+
+
+//
+// -------- 组件样式参数 --------
+//
+
+
+//组件参数命名规范：“属性名称 - 作用域 - 组件名称”，如：@bgColor-warning-alert
+
+
+////按钮
+    // 按钮颜色
+    @bgColor-primary-btn: @domColor1;
+    @fontColor-primary-btn: #fff;
+    @borderColor-primary-btn: darken(@bgColor-primary-btn,10%);
+    @bgColor-secondary-btn: @domColor2;
+    @fontColor-secondary-btn: #fff;
+    @borderColor-secondary-btn: darken(@bgColor-secondary-btn,10%);
+    @bgColor-disabled-btn: @borderColor-base;
+    @borderColor-disabled-btn: darken(@borderColor-base, 10%);
+    // 按钮边宽
+    @borderWidth-default-btn: 2px;
+    // 按钮高度
+    @height-default-btn: 74px;
+    // 按钮行高
+    @lightHeight-default-btn: @height-default-btn - @borderWidth-default-btn;
+    // 按钮包裹层padding
+    @marginLR-default-btnsWrap: @paddingLR-input-form;
+
+
+////警告
+    // 尺寸
+    @padding-default-alert: 20px;
+    // 提醒性质颜色
+    @bgColor-warning-alert: #fbe9bc;
+    @fontColor-link-wraning-alert: @domColor2;
+    // 提醒性质颜色
+    @bgColor-info-alert: transparent;
+    @fontColor-link-info-alert: @fontColor-link;
+
+
+////表单
+    // 表单标题
+    @width-label-form: 200px;
+    // 表单背景色
+    @bgColor-form: @bgColor-primary;
+    // 表单高度
+    @height-input-form: 94px;
+    // 表单值颜色
+    @fontColor-input-form: @fontColor-heading;
+    // 表单字符尺寸
+    @fontSize-input-form: @fontSize-small;
+    // 表单字符行高
+    @lightHeight-input-form: @fontSize-input-form + 4px;
+    // 表单input内边距
+    @paddingTB-input-form: (@height-input-form - @lightHeight-input-form)/2;
+    @paddingLR-input-form: (@height-input-form - @lightHeight-input-form)/2 - 12px;
+    // 验证码按钮尺寸
+    @width-ifcBtn-form: 172px;
+    @height-ifcBtn-form: @height-input-form * 0.76;
+    // 表单错误
+    @borderColor-form-error: @domColor3;
+    @fontColor-form-error: @domColor3;
+
+
+////头部
+    // 高度
+    @height-header: 88px;
+    // 字体颜色
+    @fontColor-header: @fontColor-default;
+    // 默认皮肤背景
+    @bgColor-default-header: #18181e;
+    // 主色调
+    @bgColor-primary-header: @domColor7;
+    // typeHead行高
+    @lineHeight-primary-typeHead: @fontSize-larger + 8px;
+    // typeHead内边距
+    @paddingTB-primary-typeHead: (@height-header - @lineHeight-primary-typeHead)/2;
+
+
+//// 选项卡
+    // 激活状态
+    @color-current-tab: @domColor1;
+
+
+////结算
+    // 金额字符尺寸
+    @fontSzie-primary-balance: 72px;
+    // 金额字符颜色
+    @fontColor-default-balance: @fontColor-heading;
+    @fontColor-recharge-balance: @domColor4;
+    @fontColor-reduce-balance: @domColor3;
+    // balance-wrap内边距
+    @padding-default-balance: @paddingLR-input-form;
+    // balance-company内边距
+    @paddingTB-company-balance: @paddingTB-input-form;
+    @paddingLR-company-balance: @paddingLR-input-form;
+    // balance-company 公司logo size
+    @logoSize-company-balance: 72px;
+
+
+////结果
+    // icon颜色
+    @iconColor-success-result: @domColor1;
+    @iconColor-fail-result: @domColor3;
+    @iconColor-info-result: @domColor1;
+
+
+////List
+    // 数据表头
+    // 默认数据list参数
+    @width-label-ListUnit: 30%;
+    @width-wrap-ListUnit: 70%;
+    @bgColor-ListUnit: @bgColor-primary;
+    @fontSize-ListUnit: @fontSize-small;
+    @paddingLR-ListUnit: @paddingLR-input-form;
+    @paddingTB-ListUnit: @paddingTB-input-form;
+    @lineHeight-ListUnit: @lightHeight-input-form;
+    @fontSize-ListUnit: @fontSize-small;
+    @fontColor-ListUnit: @fontColor-input-form;
+
+
+////simnav
+    // 尺寸
+    @paddingTB-btn-simnav: 30px;
+    @fontSize-btn-simnav: @fontSize-smaller;
+    // 颜色
+    @borderColor-btn-simnav: @domColor1;

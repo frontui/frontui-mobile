@@ -1,0 +1,74 @@
+/*
+* module: searchbar 搜索
+* created: tommyshao
+* updated: 2015-11-16
+*/
+@search-bg: @bgColor-base;
+@search-control-height: 60px;
+
+.searchbar {
+  position: relative;
+  padding: 15px 40px;
+  background: @search-bg;
+
+  // 文本框
+  &-control {
+    display: block;
+    width: 100%;
+    padding: 0 15px 0 50px;
+    height: @search-control-height;
+    background: #fff;
+    border: none;
+    border-radius: 10px;
+
+    &:focus{
+      outline: none;
+
+      //& ~ label {
+      //  left: 70px;
+      //
+      //  > span {
+      //    display: none;
+      //  }
+      //}
+    }
+  }
+
+  // label
+  &-control-label {
+    position: absolute;
+    top: 15px;
+    left: 50%;
+
+    transform: translate3d(-50%, 0, 0);
+    font-size: 0;
+    height: @search-control-height;
+    line-height: @search-control-height;
+    color: @fontColor-viceText;
+
+    transition: all .1s;
+
+    i {
+      .inline-block();
+      vertical-align: -5px;
+      font-size: @fontSize-large + 4;
+      line-height: @search-control-height;
+    }
+
+    span {
+      font-size: @fontSize-large;
+      transition: all .05s linear .1s;
+    }
+  }
+
+  &-focus {
+    .searchbar-control-label {
+      left: 70px;
+      > span {
+        display: none;
+        visibility: hidden;
+        opacity: 0;
+      }
+    }
+  }
+}

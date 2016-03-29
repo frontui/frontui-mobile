@@ -1,0 +1,97 @@
+.balance-wrap {
+    border-bottom: 1px solid @borderColor-default;
+    background-color: @bgColor-primary;
+    padding: @padding-default-balance;
+
+    .amount {
+        font-size: @fontSzie-primary-balance;
+        color: @fontColor-default-balance;
+        line-height: @fontSzie-primary-balance + 4px;
+        position: relative;
+        padding: 20px 20px 20px 40px;
+        .word-wrap();
+
+        > i,
+        span {
+            position: absolute;
+            top: 20px;
+            left: -10px;
+            line-height: @fontSzie-primary-balance + 4px;
+            font-size: @fontSize-largest;
+        }
+
+        > .hubtext {
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 1.2;
+        }
+
+        &.recharge {
+            color: @fontColor-recharge-balance;
+        }
+
+        &.reduce {
+            color: @fontColor-reduce-balance;
+        }
+    }
+
+    > h4 {
+        color: @fontColor-viceText;
+    }
+}
+
+.balance-company {
+    border-bottom: 1px solid @borderColor-default;
+    background-color: @bgColor-primary;
+    padding-left: @paddingLR-company-balance * 2 + @logoSize-company-balance;
+    padding-right: @paddingLR-company-balance;
+    padding-top: @paddingTB-company-balance;
+    padding-bottom: @paddingTB-company-balance;
+    line-height: @lightHeight-input-form;
+    font-size: @fontSize-input-form;
+    color: @fontColor-input-form;
+    position: relative;
+
+    > img {
+        position: absolute;
+        .square(@logoSize-company-balance);
+        top: @paddingLR-company-balance/2;
+        left: @paddingLR-company-balance;
+        background-color: @bgColor-default;
+        border: none;
+        outline: none;
+    }
+}
+
+.balance-withdraw-wrap {
+    font-size: 0;
+    line-height: 0;
+    text-align: center;
+    background-color: @bgColor-primary;
+    border-bottom: 1px solid @borderColor-default;
+
+    .cut-withdraw {
+        height: 54px;
+        background-color: @borderColor-default;
+        width: 1px;
+        vertical-align: middle;
+        .inline-block();
+    }
+}
+
+.balance-withdraw-box {
+    .inline-block();
+    width: 49%;
+    vertical-align: middle;
+    line-height: @lineHeight-base;
+    padding: 40px 0;
+
+    > h5 {
+        color: @fontColor-viceText;
+    }
+
+    > h6 {
+        color: @fontColor-viceText;
+        padding-bottom: 20px;
+    }
+}

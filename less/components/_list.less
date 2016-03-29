@@ -1,0 +1,281 @@
+/*
+* module: list 列表
+          list-text 纯文本
+* created: tommyshao
+* updated: 2015-11-16
+*/
+
+.list {
+  margin: 0 0 20px 0;
+  padding: 0;
+  width: 100%;
+  background: #fff;
+  border-top: 1px solid @borderColor-default;
+
+  > li {
+    display: -webkit-box;
+    -webkit-box-align: center;
+    position: relative;
+    padding: 20px;
+    border-top: 1px solid @borderColor-default;
+
+    &:first-child {
+      border-top: none;
+    }
+
+  }
+
+  // 顶部对齐
+  &.list-horizontal {
+    > li {
+      -wekik-box-align: top;
+    }
+  }
+
+  // 纯文本
+  &-pure {
+    > li {
+      display: block;
+    }
+  }
+
+  // 可链接
+  &-link {
+    > li {
+      &:active,
+      &.active {
+        background: @bgColor-default;
+      }
+
+      > .list-info {
+        padding-right: 30px;
+      }
+      &:after {
+        position: absolute;
+        top: 50%;
+        right: 20px;
+        margin-top: -22px;
+        margin-right: -10px;
+        content: "\e602";
+        font-family: 'fonticon';
+        -webkit-font-smoothing: antialiased;
+        -webkit-text-stroke-width: .2px;
+        color:@fontColor-viceText;
+        font-size: @fontSize-large;
+      }
+      &.no-link{
+        &:active,
+        &.active{
+          background: none;
+        }
+        &:after{
+          font-size: 0px;
+        }
+        .link-num{
+          position: absolute;
+          top: 50%;
+          right: 20px;
+          margin-top: -18px;
+          margin-right: -10px;
+          font-size: @fontSize-small;
+        }
+      }
+    }
+  }
+
+  //带数字和时间
+  &-num{
+    li{
+      > .list-des{
+        display: flex;
+        justify-content:flex-end;
+        -webkit-flex:1;
+        flex:1;
+      }
+      > .des-box{
+
+      }
+      > .list-title{
+        width: 200px;
+      }
+    }
+  }
+
+  // 带缩略图
+  &-thumb,
+  &-avatar{
+    box-sizing: content-box;
+    width: 60px;
+    height: 60px;
+    margin-right: 15px;
+
+    > img{
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    & ~ .list-info {
+      h4 {
+        color: @fontColor-heading;
+        font-size: @fontSize-small;
+      }
+    }
+  }
+
+  &-avatar {
+    > img {
+      border-radius: 50%;
+    }
+  }
+
+  &-info {
+    display: -webkit-box;
+    -webkit-box-flex: 1;
+    -webkit-box-orient: vertical;
+    -webkit-box-pack: center;
+    padding-right:20px;
+  }
+
+  // 空列表
+  &-empty {
+    padding: 1em 1em 2em;
+    text-align: center;
+    display: -webkit-box;
+    -webkit-box-flex: 1;
+    -webkit-box-orient: vertical;
+    -webkit-box-pack: center;
+
+    i {
+      font-size: 120px;
+      color: @fontColor-viceText;
+    }
+
+    p {
+      margin-top: 10px;
+    }
+  }
+}
+
+.default-list-unit {
+    position: relative;
+    border-bottom: 1px solid @borderColor-default;
+    background-color: @bgColor-ListUnit;
+    font-size: 0;
+    line-height: 0;
+    .clearfix();
+}
+
+.list-unit-label {
+    .inline-block();
+    vertical-align: middle;
+    .word-wrap();
+    font-size: @fontSize-ListUnit;
+    line-height: @lineHeight-ListUnit;
+    color: @fontColor-heading;
+    width: @width-label-ListUnit !important;
+    padding-left: @paddingLR-ListUnit;
+    padding-top: @paddingTB-ListUnit;
+    padding-bottom: @paddingTB-ListUnit;
+}
+
+.list-unit-wrap {
+    position: relative;
+    .inline-block();
+    vertical-align: middle;
+    width: @width-wrap-ListUnit !important;
+}
+
+.list-unit {
+    padding: @paddingTB-ListUnit @paddingLR-ListUnit;
+    line-height: @lineHeight-ListUnit;
+    font-size: @fontSize-ListUnit;
+    color: @fontColor-viceText;
+    background-color: transparent;
+    .word-wrap();
+}
+
+.list-head {
+    padding: @paddingLR-ListUnit;
+    font-size: @fontSize-ListUnit;
+    line-height: @lineHeight-ListUnit;
+    position: relative;
+    border-bottom: 1px solid @borderColor-default;
+    border-top: 1px solid @borderColor-default;
+    background-color: @bgColor-ListUnit;
+}
+
+.list-simselect-unit {
+    position: relative;
+    background-color: @bgColor-ListUnit;
+    padding: 20px 100px;
+    .clearfix();
+    display: block;
+    border-top: 1px solid @borderColor-default;
+
+    > img {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        .square(60px);
+        background-color: @bgColor-default;
+        display: block;
+        border: none;
+        outline: none;
+    }
+
+    > input[type='radio'] {
+        position: absolute;
+        top: 36px;
+        right: 40px;
+        .square(30px);
+    }
+
+    > h6 {
+        color: @fontColor-viceText;
+    }
+
+    &.pure {
+        padding: 20px 100px 20px 20px;
+
+        > input[type='radio'] {
+            top: 22px;
+        }
+    }
+}
+
+.list-tips {
+    position: absolute;
+    top: -14px;
+    right: -444px;
+    width: 420px;
+    background-color: #808080;
+    color: #fff;
+    .rounded(5px);
+    padding: 10px 20px;
+    display: none;
+    font-size: 24px;
+    line-height: 1.4;
+    z-index: 2;
+    text-align: justify;
+}
+
+.list-tips-wrap {
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+
+    &:hover {
+
+        .list-tips {
+            display: block;
+        }
+    }
+}
+
+.tips-arrow {
+    position: absolute;
+    top: 14px;
+    left: -14px;
+    .arrow-left-or-right(border-right,14px,14px,#808080);
+}

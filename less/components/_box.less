@@ -1,0 +1,83 @@
+/*
+* module: box 模块
+* created: tommyshao
+* updated: 2015-11-18
+*/
+// 通用模块盒子
+.box {
+  margin-bottom: 20px;
+  background: #fff;
+
+  &:last-child {
+    margin: 0;
+  }
+
+  &-mb0 {
+    margin-bottom: 0;
+  }
+
+  // header
+  &-hd {
+    margin-bottom: 0;
+    padding: 0 30px;
+    height: 100px;
+    line-height: 100px;
+    font-size: @fontSize-smaller !important;
+    color: @fontColor-base;
+  }
+
+  // 有边距盒子
+  &-inner{
+    margin: 20px;
+    border: 1px solid @borderColor-base;
+    background: #fff;
+  }
+}
+
+// 数据统计盒子
+.data-count {
+  display: -webkit-box;
+  width: 100%;
+
+  > li {
+    position: relative;
+    padding: 30px;
+
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-box-flex: 1;
+    //-webkit-box-pack: center;
+    //-webkit-box-align: center;
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 64px;
+      right: 0;
+      //margin-top: -37px;
+      height: 74px;
+      width: 2px;
+      background: @borderColor-default;
+    }
+
+    &:last-child:after {
+      display: none;
+    }
+
+    h5 {
+      font-size: @fontSize-smaller !important;
+      color: @fontColor-base;
+      text-align: center;
+    }
+
+    h2 {
+      margin: 5px 0;
+      color: @domColor1;
+      //font-size: @fontSize-largest !important;
+    }
+
+    .btn {
+      margin-top: 20px;
+    }
+  }
+}

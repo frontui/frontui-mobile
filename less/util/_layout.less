@@ -1,0 +1,60 @@
+/*
+* module: layout 排版
+* created: tommyshao
+* updated: 2015-11-19
+*/
+
+/**
+ * 垂直上下居中
+ */
+.v-center {
+  //width: 100%;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-pack: center;
+  -webkit-box-align: center;
+  text-align: center;
+  min-height: 150px;
+}
+/**
+ * 排版
+ */
+.flex,
+.tiled{
+  display: -webkit-box;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+}
+.flex-ver{
+  -webkit-box-orient: vertical;
+}
+.flex-pack-start {
+  -webkit-box-pack: start;
+}
+.flex-pack-end {
+  -webkit-box-pack: end;
+}
+.flex-pack-center {
+  -webkit-box-pack: center;
+}
+.flex-align-start {
+  -webkit-box-align: start;
+}
+.flex-align-end {
+  -webkit-box-align: end;
+}
+.flex-align-center {
+  -webkit-box-align: center;
+}
+/**
+ * 平铺
+ */
+.tiled li {
+  -webkit-box-flex: 1;
+  width: 100%;
+  text-align: center;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-pack: center;
+  -webkit-box-align: center;
+}

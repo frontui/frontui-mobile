@@ -1,0 +1,114 @@
+﻿.btn {
+    .inline-block();
+    .rounded(5px);
+    height: @height-default-btn;
+    width: 100%;
+    outline: none;
+    border: none;
+    border-bottom-width: @borderWidth-default-btn;
+    border-bottom-style: solid;
+    text-align: center;
+    font-size: @fontSize-large;
+    line-height: @lightHeight-default-btn;
+    padding: 0;
+    margin: 0;
+    vertical-align: middle;
+
+    &.primary {
+        background-color: @bgColor-primary-btn;
+        border-color: @borderColor-primary-btn;
+        .link-mobile(@fontColor-primary-btn);
+
+        &:active {
+            background-color: darken(@bgColor-primary-btn,5%);
+        }
+    }
+
+    &.secondary {
+        background-color: @bgColor-secondary-btn;
+        border-color: @borderColor-secondary-btn;
+        .link-mobile(@fontColor-secondary-btn);
+
+        &:active {
+            background-color: darken(@bgColor-secondary-btn,5%);
+        }
+    }
+
+    // 小尺寸按钮
+    &-small {
+        width: auto;
+        height: auto;
+        line-height: 1.5;
+        padding: .5rem 1.5rem;
+        font-size: @fontSize-base;
+    }
+    
+    // 禁止状态
+    &[disabled] {
+        background: @bgColor-disabled-btn;
+        border-bottom-color: @borderColor-disabled-btn;
+    }
+}
+
+.btns-wrap {
+    text-align: center;
+    font-size: 0;
+    line-height: 0;
+    margin: 0 @marginLR-default-btnsWrap;
+
+    /*&.single-btn {
+
+        .btn {
+            width: @btnWidth-single;
+        }
+    }
+
+    &.double-btns {
+        
+        .btn {
+            width: @btnWidth-double;
+            margin: 0 10px;
+        }
+    }
+
+    &.triple-btns {
+        
+        .btn {
+            width: @btnWidth-triple;
+            margin: 0 15px;
+        }
+    }*/
+
+    .btn + .btn {
+        margin-top: 20px;
+    }
+}
+
+// group
+.btn-group {
+    display: -webkit-box;
+    width: 100%;
+
+    .btn {
+        display: block;
+        -webkit-box-flex: 1;
+        border-bottom: none;
+        border-radius: 0;
+
+        &:first-child {
+            border-radius: 5px 0 0 5px;
+        }
+        &:last-child {
+            border-right: none;
+            border-radius: 0 5px 5px 0;
+        }
+
+        &.primary {
+            border-right: 1px solid darken(@borderColor-primary-btn, 5%);
+        }
+
+        &.secondary {
+            border-right: 1px solid darken(@borderColor-secondary-btn, 5%);
+        }
+    }
+}

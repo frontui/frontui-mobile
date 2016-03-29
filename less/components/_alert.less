@@ -1,0 +1,38 @@
+﻿.alert {
+    padding: @padding-default-alert @basSize-pointer+20px;
+    position: relative;
+    line-height: @lineHeight-base;
+    font-size: @fontSize-smallest;
+    text-align: center;
+    color: @fontColor-heading;
+    .word-wrap();
+
+    // 关闭
+    > .icon-clear {
+        position:absolute;
+        top: @padding-default-alert / 2;
+        right: @padding-default-alert;
+        font-size: @basSize-pointer;
+        color: @fontColor-link-wraning-alert;
+    }
+
+    .alertlink {
+        .link-mobile();
+    }
+
+    &.warning {
+        background-color: @bgColor-warning-alert;
+
+        .alertlink {
+            color: @fontColor-link-wraning-alert;
+        }
+    }
+
+    &.info {
+        background-color: @bgColor-info-alert;
+
+        .alertlink {
+            color: @fontColor-link-info-alert;
+        }
+    }
+}

@@ -1,0 +1,201 @@
+﻿.form-control-wrap {
+    position: relative;
+}
+
+.form-control-label {
+    font-size: @fontSize-input-form;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: @width-label-form;
+    color: @fontColor-heading;
+    padding-left: @paddingLR-input-form;
+    padding-top: @paddingTB-input-form;
+    padding-bottom: @paddingTB-input-form;
+    line-height: @lightHeight-input-form;
+}
+
+.form-control {
+    display: block;
+    padding: @paddingTB-input-form @paddingLR-input-form;
+    width: 100%;
+    height: @height-input-form;
+    outline: none;
+    border: none;
+    line-height: @lightHeight-input-form;
+    font-size: @fontSize-input-form;
+    color: @fontColor-input-form;
+    background-color: transparent;
+    .text-hide();
+
+    &[readonly] {
+        color: @fontColor-viceText;
+    }
+}
+
+//头像
+.user-pic{
+    padding: 20px 0 10px 0;
+    img{
+        border-radius:50%;
+    }
+}
+
+.form-group {
+    position: relative;
+    padding-left: @width-label-form;
+    border-bottom: 1px solid @borderColor-default;
+    background-color: @bgColor-form;
+    .clearfix();
+
+    &.simselect {
+        display: block;
+        .link-mobile();
+
+        .form-control-wrap {
+            padding-right: @paddingLR-input-form + 50px;
+            padding-left: @paddingLR-input-form + 50px;
+
+            > .simoption {
+                font-size: @fontSize-input-form;
+                line-height: @lightHeight-input-form;
+                color: @fontColor-input-form;
+                padding: @paddingTB-input-form 0;
+            }
+
+            > i {
+                position: absolute;
+                top: 0;
+                line-height: @height-input-form;
+                font-size: @fontSize-large;
+               
+                &.right {
+                    right: @paddingLR-input-form;
+                    color: @fontColor-viceText;
+                }
+
+                &.left {
+                    left: @paddingLR-input-form;
+                    color: @domColor2;
+                }
+            }
+        }
+    }
+
+    &.ifc {
+
+        .form-control {
+            padding-right: @paddingLR-input-form*2 + @width-ifcBtn-form;
+        }
+
+        button.ifc-btn {
+            position: absolute;
+            top: @height-input-form * 0.12;
+            right: @paddingLR-input-form;
+            width: @width-ifcBtn-form;
+            height: @height-ifcBtn-form;
+            background-color: @bgColor-secondary-btn;
+            color: #fff;
+            border: none;
+            outline: none;
+            border-bottom: @borderWidth-default-btn solid @borderColor-secondary-btn;
+            .rounded(5px);
+
+            &:active {
+                background-color: darken(@bgColor-secondary-btn,5%);
+            }
+        }
+    }
+
+
+    // 错误
+    &.has-error {
+         //border-bottom-color: @borderColor-form-error;
+
+        //box-shadow: inset 1px 1px 10px rgba(red(@fontColor-form-error), green(@fontColor-form-error), blue(@fontColor-form-error), .1);
+
+        .form-control-label {
+            color: @fontColor-form-error;
+        }
+    }
+}
+
+.agreement-wrap {
+    padding: @paddingTB-input-form @paddingLR-input-form;
+    font-size: 0;
+    line-height: 0;
+
+    > label {
+        .inline-block();
+        font-size: @fontSize-smallest;
+        line-height: @lineHeight-base;
+        padding-left: 34px;
+        position: relative;
+
+        > input[type='checkbox'] {
+            position: absolute;
+            top: 4px;
+            left: 0;
+            width: 20px;
+            height: 20px;
+            -webkit-appearance: checkbox;
+        }
+
+        > a {
+            .link-standard();
+        }
+    }
+}
+
+// 输入框100%，没有label
+.form-block {
+    .form-group {
+        padding-left: 0;
+    }
+}
+
+// 提示信息
+.form-tips {
+    padding: 20px 30px;
+}
+
+// 单选框样式
+// -----------
+// tommyshao
+// 2016-03-07
+.ui-radio {
+    position: relative;
+    display: block;
+    padding-left: 40px;
+
+    >input[type='radio'] {
+        float: left;
+        //visibility: hidden;
+        //opacity: 0;
+        border: none;
+        background: transparent;
+        -webkit-appearance: none;
+
+        &:after {
+            &:extend([class^="icon-"]);
+            position: absolute;
+            top: 50%;
+            left: 0;
+            margin-top: -15px;
+            content: "\e28a";
+            font-size: 30px;
+            color: @domColor4;
+
+            visibility: hidden;
+            opacity: 0;
+
+            transition: all .3s ease-in;
+        }
+
+        // 选中
+        &:checked:after {
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+}

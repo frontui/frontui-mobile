@@ -1,0 +1,71 @@
+/*
+* module: tab 选项卡
+* created: tommyshao
+* updated: 2015-11-18
+*/
+.tab {
+  width: 100%;
+  overflow: hidden;
+
+  // 导航
+  &-nav {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: -webkit-box;
+    background: #fff;
+    height: 110px;
+
+    li {
+      -webkit-box-flex: 1;
+      min-width: 70px;
+      list-style: none;
+      height: 110px;
+      line-height: 110px;
+      text-align: center;
+      font-size: @fontSize-small;
+
+      &.current {
+        color: @color-current-tab;
+        border-bottom: 4px solid @color-current-tab;
+
+        > a {
+          color: @color-current-tab;
+        }
+      }
+
+      &:active {
+        opacity: .8;
+      }
+
+      > a {
+        display: block;
+        color: @fontColor-default;
+      }
+    }
+  }
+
+  // 内容
+  &-content {
+    display: -webkit-box;
+
+    transition-property: transform;
+    transition-timing-function: cubic-bezier(0.1, 0.57, 0.1, 1);
+    transition-duration: .3s;
+    transition-delay: 0s;
+    -webkit-backface-visibility:hidden;
+
+    > li {
+      width: 100%;
+      //-webkit-box-flex: 1;
+    }
+  }
+
+  &.active {
+    .tab-content {
+      >li {
+        -webkit-box-flex: 1;
+      }
+    }
+  }
+}

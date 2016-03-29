@@ -1,0 +1,82 @@
+﻿.simnav-wrap {
+    padding-left: 93px;
+    position: relative;
+    border: 1px solid @borderColor-default;
+
+    > .home {
+        .square(93px);
+        position: absolute;
+        top: 0;
+        left: 0;
+        .link-mobile(@fontColor-default);
+        border-right: 1px solid @borderColor-default;
+        background: url('@{images-url}home.jpg') #fff center center no-repeat;
+    }
+
+    &.hidehome {
+        padding-left: 0;
+
+        > .home {
+            display: none;
+        }
+    }
+}
+
+.simnav {
+    .reset-list(none,0,0);
+    background-color: @bgColor-primary;
+    text-align: center;
+
+    &.fourlink {
+
+        > li {
+            width: 24.90%;
+        }
+    }
+
+    &.threelink {
+
+        > li {
+            width: 32.99%;
+        }
+    }
+
+    > li {
+        .inline-block();
+
+        > a {
+            text-align: center;
+            padding-top: @paddingTB-btn-simnav;
+            padding-bottom: @paddingTB-btn-simnav;
+            border-bottom: 5px solid transparent;
+            .link-mobile(@fontColor-default);
+            display: block;
+            font-size: @fontSize-btn-simnav;
+
+            > span {
+                display: block;
+                line-height: 1;
+                border-right: 1px solid darken(@borderColor-default,10%);
+            }
+            &.disabled{
+                color: #999;
+            }
+
+        }
+
+        &:last-child {
+
+            > a > span {
+                border-right: none;
+            }
+        }
+
+        &.current {
+
+            > a {
+                border-color: @borderColor-btn-simnav;
+                color: @fontColor-link;
+            }
+        }
+    }
+}

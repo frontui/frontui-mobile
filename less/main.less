@@ -1,0 +1,173 @@
+/*
+* @project    : bms_v3_mobile
+* @author     : frontui
+* @created    : 2015-11-13
+* @description: bmsV3 for mobile
+*/
+
+@import "_share.less";
+
+/*
+--- 导入 bms_v3_mobile 业务逻辑样式 ---
+*/
+@import "app/_trade-list";                                                   //bms_v3_mobile 交易列表
+
+.wallbg {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 100%;
+    background: url("@{images-url}wallbg.jpg") center 88px no-repeat;
+    background-size: cover;
+    z-index: -1;
+}
+
+.wallbg-btn {
+    position: absolute;
+    width: 400px;
+    text-align: center;
+    font-size: 33px;
+    line-height: 80px;
+    height: 80px;
+    background-color: #dd5858;
+    left: 50%;
+    margin-left: -200px;
+    .rounded(5px);
+    color: #fff;
+
+    &.one {
+        top: 60%;
+    }
+
+    &.two {
+        top: 72%;
+    }
+
+    &.three {
+        top: 84%;
+    }
+}
+
+//收银台页面用来清了'余额不足立即充值'的li的border和padding-top
+.bpnone {
+    border: none !important;
+    padding-top: 0 !important;
+}
+
+//收银台页面用来清了'余额不足立即充值'的li的border和padding-top
+.width100per {
+    width: 100%;
+}
+
+
+//服务台详情css
+.service-info{
+    .steps-list{
+        >li{
+           background: #c0d2ea;
+            padding: 10px;
+            text-align: center;
+            &.arrow{
+                background: none;
+            }
+        }
+    }
+    .service-table{
+        width: 100%;
+        tr th{
+            background: #c0d2ea;
+            padding: 10px;
+        }
+        tr td{
+            background: #e9e9e9;
+            padding: 10px;
+            text-align: center;
+        }
+        tr:nth-of-type(odd){
+            td{
+                background:#fff ;
+            }
+        }
+    }
+}
+
+
+//不可点击效果
+.link-standard.disabled{
+    color: #999;
+}
+.btn.disabled{
+    background: #999;
+    border-color:#999 ;
+}
+
+
+//临时公告
+.notice-info{
+    p{
+        text-indent: 40px;
+    }
+}
+
+// 收银台
+.payment {
+    .panel-title {
+        em{
+            position: relative;
+            width: 1em * @lineHeight-base;
+            height: 1em * @lineHeight-base;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        i {
+            position: absolute;
+        }
+    }
+    .panel-btn {
+        span {
+            width: auto;
+            min-height: initial;
+        }
+    }
+
+    .panel-table {
+        > dt{
+            width: 35%;
+            min-height: inherit;
+        }
+
+        > dd {
+            width: 65%;
+
+            li {
+                padding: 20px 0;
+                border-top: 1px solid @borderColor-base;
+
+                &:first-child {
+                    border-top: none;
+                    padding-top: 0;
+                }
+
+                &:last-child {
+                    padding-bottom: 0;
+                }
+            }
+        }
+    }
+
+
+    //-- 展开
+    &.show {
+        .panel-title {
+            visibility: visible;
+
+            i {
+                transform: rotate(90deg);
+            }
+        }
+        .panel-btn {
+            display: none;
+        }
+    }
+}

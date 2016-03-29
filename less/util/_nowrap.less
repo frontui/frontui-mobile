@@ -1,0 +1,26 @@
+/*
+* module: nowrap 文字截断.不换行，超出...
+* created: tommyshao
+* updated: 2015-11-19
+*/
+
+/* 文字截断 */
+.nowrap{
+  .text-hide();
+}
+.nowrap-flex{
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  -webkit-box-flex: 1;
+  height: inherit;
+}
+.nowrap-multi{
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}

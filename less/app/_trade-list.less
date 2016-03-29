@@ -1,0 +1,47 @@
+/*
+* module: trade 交易列表
+* created: tommyshao
+* updated: 2015-11-19
+*/
+.trade-list {
+
+  >li {
+    position: relative;
+  }
+
+  .list-info {
+    //width: 75%;
+
+    > h5 {
+      margin-bottom: 10px;
+    }
+
+    > p{
+      color: @fontColor-viceText;
+    }
+  }
+  .list-bar {
+    //float: right;
+    //width: 25%;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    text-align: right;
+
+    > b {
+      display: block;
+      margin-bottom: 8px;
+      color: @fontColor-heading;
+
+      &.warning-FontColor {
+        font-weight: 400;
+        color: @domColor2;
+      }
+    }
+
+    > span {
+      display: block;
+      font-size: @fontSize-smallest;
+    }
+  }
+}

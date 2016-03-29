@@ -1,0 +1,76 @@
+/*
+* module: panel 面板
+* created: tommyshao
+* updated: 2015-11-20
+*/
+.panel {
+  position: relative;
+  width: 100%;
+
+  &-title {
+    margin-left: 20px;
+    margin-right: 100px;
+  }
+
+  &-btn {
+    position: absolute;
+    right: 20px;
+    top: 0;
+
+    span {
+      .inline-block();
+      position: relative;
+      width: 24px;
+      height: 24px;
+    }
+
+    i {
+      position: absolute;
+    }
+  }
+
+  &-cnt {
+    display: none;
+    margin-top: 20px;
+  }
+
+  &.show {
+    .panel-title {
+      //visibility: hidden;
+    }
+
+    .panel-cnt {
+      display: block;
+    }
+
+    .panel-btn {
+      i {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  // table
+  &-table {
+    .clearfix();
+
+    padding-bottom: 20px;
+
+    > dt {
+      float: left;
+      width: 65%;
+      min-height: 76px;
+      padding: 20px 20px 0 20px;
+    }
+    > dd {
+      float: right;
+      padding: 20px 20px 0 20px;
+      width: 35%;
+      text-align: right;
+
+      em {
+        display: block;
+      }
+    }
+  }
+}

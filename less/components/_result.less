@@ -1,0 +1,75 @@
+﻿.result-wrap {
+    font-size: 0;
+    line-height: 0;
+    text-align: center;
+    padding: 70px 20px;
+    min-height: @fontSize-largest*2 + 70 * 2;
+
+    .result-box {
+        .inline-block();
+        padding-left: 110px;
+        padding-top: 8px;
+        position: relative;
+        line-height: @lineHeight-base;
+        text-align: left;
+
+        // 只有标题
+        /*&:only-child {
+            padding-top: 24px;
+
+            .result-icon {
+                color: @iconColor-info-result;
+            }
+        }*/
+
+        > h5 {
+            color: @fontColor-viceText;
+            font-size: @fontSize-smallest !important;
+        }
+    }
+
+    .result-icon {
+        position: absolute;
+        top: 0;
+        left: 0;
+        font-size: @fontSize-largest*2;
+    }
+
+    &.success {
+
+        .result-icon {
+            color: @iconColor-success-result;
+        }
+    }
+
+    &.fail {
+
+        .result-icon {
+            color: @iconColor-fail-result;
+        }
+    }
+
+    &.info {
+
+        .result-box {
+            padding-top: 24px;
+        }
+
+        .result-icon {
+            color: @iconColor-info-result;
+        }
+    }
+}
+
+.sub-result-text {
+    text-align: center;
+    font-size: @fontSize-smallest;
+    line-height: @fontSize-smallest + 14px;
+    padding: 0 20px;
+}
+
+.result-text {
+    text-align: center;
+    margin-top: -30px;
+    padding-bottom: 50px;
+}

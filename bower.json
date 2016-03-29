@@ -1,0 +1,24 @@
+{
+  "name": "front-mobile",
+  "description": "mobile framework for frontui",
+  "main": "index.js",
+  "authors": [
+    "frontui"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "frontui"
+  ],
+  "homepage": "https://github.com/frontui/frontui-mobile",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "frontui": "^1.2.8"
+  }
+}

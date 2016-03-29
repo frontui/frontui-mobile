@@ -1,0 +1,77 @@
+/*
+--- 导入 frontui 配置样式 ---
+*/
+@import "../bower_components/frontui/less/_normalize";                    //项目引用样式初始化
+@import "../bower_components/frontui/less/_font";                         //项目字体
+@import "../bower_components/frontui/less/_fonticon";                     //项目字体图标
+@import "../bower_components/frontui/less/_animate";                      //项目引用CSS3动画库
+@import "../bower_components/frontui/less/_animation";                    //交互CSS3动画
+
+
+/*
+--- 导入 bms_v3_mobile 配置样式 ---
+*/
+@import "_config";                                                           //bms_v3_mobile配置参数
+@import "_mix";                                                              //bms_v3_mobile基础mixin
+@import "components/_gobal";                                                 //bms_v3_mobile全局样式配置
+@import "components/_typeset";                                               //bms_v3_mobile全局样式配置
+
+
+/*
+--- 导入 frontui 组件样式 ---
+*/
+//@import "../../bower_components/frontui/less/components/_pop";               //frontui弹窗
+
+
+/*
+--- 导入 bms_v3_mobile 工具类样式 ---
+*/
+@import "util/_border";                                                      // 边框线
+@import "util/_justify";                                                     // 两端对齐
+@import "util/_nowrap";                                                      // 文字截断
+@import "util/_layout";                                                      // 排版
+
+
+/*
+--- 导入 bms_v3_mobile 组件样式 ---
+*/
+@import "components/_navigator";                                             //bms_v3_mobile导航
+@import "components/_form";                                                  //bms_v3_mobile表单
+@import "components/_buttons";                                               //bms_v3_mobile按钮
+@import "components/_search";                                                //bms_v3_mobile搜索
+@import "components/_list";                                                  //bms_v3_mobile列表
+@import "components/_header";                                                //bms_v3_mobile头部组件
+@import "components/_alert";                                                 //bms_v3_mobile警告
+@import "components/_tab";                                                   //bms_v3_mobile标签页
+@import "components/_balance";                                               //bms_v3_mobile结算组件
+@import "components/_loading";                                               //bms_v3_mobile加载层
+@import "components/_dialog";                                                //bms_v3_mobile弹出层
+@import "components/_tab";                                                   //bms_v3_mobile 选项卡
+@import "components/_box";                                                   //bms_v3_mobile 盒子
+@import "components/_result";                                                //bms_v3_mobile结果页
+@import "components/_panel";                                                 //bms_v3_mobile面板
+@import "components/_bankcard";                                              //bms_v3_mobile银行卡管理
+@import "components/_chart";                                                 //bms_v3_mobile图表
+@import "components/_pop";                                                   //bms_v3_mobile弹窗
+
+.box-hd-addclass {
+    position: relative;
+    background-color: #fff;
+
+    > a {
+        position: absolute;
+        top: 0;
+        right: 20px;
+        .link-mobile();
+    }
+}
+
+//帮助中心详情，贴图片内容的限宽样式
+.img-in-help {
+    padding-top: 30px;
+
+    > a > img {
+        width: 100%;
+        display: block;
+    }
+}

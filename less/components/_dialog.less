@@ -1,0 +1,82 @@
+/*
+* module: dialog 弹出层
+* created: tommyshao
+* updated: 2015-11-19
+*/
+.dialog {
+    .box-center(false);
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+    transition-delay: 50ms;
+
+    &.show {
+        display: -webkit-box;
+        visibility: visible;
+        opacity: 1;
+        z-index: 999;
+    }
+    // content
+    &-cnt {
+        position: relative;
+        background: #fff;
+        border-radius: 10px;
+        width: 500px;
+        background-clip: padding-box;
+        outline: 0;
+        pointer-events: auto;
+    }
+    //body
+    &-bd {
+        padding: 40px;
+        min-height: 80px;
+        border-radius: 10px 10px 0 0;
+        font-size: @fontSize-small;
+        // title
+        h4 {
+            margin-bottom: 5px;
+            font-size: @fontSize-small !important;
+            text-align: center;
+        }
+
+        div {
+            width: 100%;
+        }
+
+        &.simselect {
+            padding: 0;
+        }
+    }
+    //-- footer
+    &-ft {
+        border-radius: 0 0 10px 10px;
+
+        &.btn-group {
+            .btn {
+                border-width: 1px 1px 0 0;
+                border-style: solid;
+                border-color: darken(@borderColor-default, 10%);
+                background: rgba(0,0,0,0);
+                font-size: @fontSize-base;
+
+                &:active {
+                    background: rgba(0,0,0,.1);
+                }
+
+                &:first-child {
+                    border-radius: 0 0 0 10px;
+                }
+
+                &:last-child {
+                    border-radius: 0 0 10px 0;
+                }
+            }
+        }
+    }
+}
+
+//弹窗里面有选择项 ray
+.dialog-simselect-wrap {
+    max-height: 412px;
+    overflow: auto;
+}
