@@ -30,4 +30,7 @@ $RECYCLE.BIN/
 css/
 css
 
+dist
+dist/
+
 *.log
