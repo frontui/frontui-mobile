@@ -2,7 +2,7 @@
 mobile framework for frontui
 
 
-#develpoer
+#develop
 
 ```
 bower install && npm install
